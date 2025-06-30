@@ -24,9 +24,8 @@ Looty Games - Avatar Air Bender Fighting Game
 - Sound System
 - Round System
 
-VIDEO: https://www.youtube.com/watch?v=PenfqJHtU6w
-
-GAME: https://www.roblox.com/games/101874364639492/Avatar-Legends-Bending-Grounds-BETA
+[VIDEO](https://www.youtube.com/watch?v=PenfqJHtU6w) |
+[GAME](https://www.roblox.com/games/101874364639492/Avatar-Legends-Bending-Grounds-BETA)
 
 Twin Atlas - MTV, Teen Wolf, West Elm
 - House Editor
@@ -35,13 +34,11 @@ Twin Atlas - MTV, Teen Wolf, West Elm
 - Round System
 - Shop System
 
-WEREWOLF ESCAPE PROMO: https://www.youtube.com/watch?v=_JgCbbQr-3o
+[WEREWOLF ESCAPE PROMO](https://www.youtube.com/watch?v=_JgCbbQr-3o) | 
+[WEREWOLF ESCAPE GAME](https://www.roblox.com/games/11864182128/NEW-MAP-Werewolf-Escape)
 
-GAME: https://www.roblox.com/games/11864182128/NEW-MAP-Werewolf-Escape
-
-WELD ELM PROMO: https://www.youtube.com/watch?v=QI2XYDuGuNw
-
-WEST ELM GAME: https://www.roblox.com/games/9680886326/NEW-MINIGAME-West-Elm-Home-Design
+[WELD ELM PROMO](https://www.youtube.com/watch?v=QI2XYDuGuNw) | 
+[WEST ELM GAME](https://www.roblox.com/games/9680886326/NEW-MINIGAME-West-Elm-Home-Design)
 
 [MTV PROMO](https://www.youtube.com/watch?v=FYDpSNdZZhw)
 
@@ -56,7 +53,7 @@ Fishing Simulator
 ### Video Demonstration
 [![](https://img.youtube.com/vi/Zft_1YW6fkY/0.jpg)](https://www.youtube.com/watch?v=Zft_1YW6fkY)
 
-PLAY: https://www.roblox.com/games/2866967438/Fishing-Simulator
+[GAME](https://www.roblox.com/games/2866967438/Fishing-Simulator)
 
 # Projects
 - Necromancers Tomb (Unreal Engine, Blueprint)
