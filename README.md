@@ -11,6 +11,7 @@
 | ----------- | ----------- |
 | Experience      | Company Projects - No Source      |
 | Projects   | Personal and Contract + Source Available      |
+| Demonstrations | Videos of Demonstrating Systems where code is not available |
 
 # Experience
 Game Design and Production Instructor
@@ -64,6 +65,8 @@ Fishing Simulator
 ![](https://i.ibb.co/mrjnqDzW/Screenshot-57.png)
 
 SOURCE: https://github.com/TechProgramming/NecromancersTomb
+
+WEBSITE: https://clanlabs.co/
 
 ### About
 - A project to test AI, Obstacles, Hiding Mechanic, and Unlocking Doors
@@ -120,9 +123,6 @@ SOURCE CODE: https://github.com/TechProgramming/Clan-Labs-Snapshot
 
 ### Architecture
 ![](https://i.ibb.co/8DgHvPfZ/rs-w-1280-h-796.webp)
-
-### Website
-https://clanlabs.co/
 
 ### Tutorial
 [![](https://img.youtube.com/vi/25bCIIZ-yYU/0.jpg)](https://www.youtube.com/watch?v=25bCIIZ-yYU)
@@ -206,6 +206,9 @@ This is a project that was developed as a fan game for an SCP community where yo
 - Jobs
 - Data Saving
 
+### Demonstration
+[![](https://img.youtube.com/vi/DpmLirBJx6A/0.jpg)](https://www.youtube.com/watch?v=DpmLirBJx6A)
+
 ### Excerpt - SCP 042 AI
 SOURCE: https://github.com/TechProgramming/Area-24/blob/master/src/Server/Server/Services/Core/SCP/Entities/035.luau
 
@@ -270,4 +273,15 @@ function SCP:BreachWander()
 	end;
 end
 ```
+
+# Demonstrations
+
+## Unreal Engine Networking
+[![](https://img.youtube.com/vi/2Vq1pN7qJkw/0.jpg)](https://www.youtube.com/watch?v=2Vq1pN7qJkw)
+
+## Cutscene Test + Dialogue
+[![](https://img.youtube.com/vi/6KJwC-tAlX0/0.jpg)](https://www.youtube.com/watch?v=6KJwC-tAlX0)
+
+## Interaction System + Dialogue
+[![](https://img.youtube.com/vi/EgUR2pNJinc/0.jpg)](https://www.youtube.com/watch?v=EgUR2pNJinc)
 
