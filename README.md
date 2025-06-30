@@ -57,11 +57,31 @@ Fishing Simulator (Lua, JavaScript)
 [GAME](https://www.roblox.com/games/2866967438/Fishing-Simulator)
 
 # Projects
-- Necromancers Tomb (Unreal Engine, Blueprint)
+- Fallen Star Horizon (Unreal Engine, C++)
+- Necromancer's Tomb (Unreal Engine, Blueprint)
 - Clan Labs (Node.js, JavaScript, Web, API)
 - Area 24 (Roblox, Lua, Weapons, AI, RPG Systems)
 
-## Necromancers Tomb - Blueprint
+## Fallen Star Horizon - C++ - Current Work in Progress
+![](https://i.ibb.co/s9nJrP2s/Screenshot-58.png)
+
+### About
+A project for testing networking and top-down gameplay.
+
+### Demonstration
+[![](https://img.youtube.com/vi/-AwoyUF-20A/0.jpg)](https://www.youtube.com/watch?v=-AwoyUF-20A)
+[![](https://img.youtube.com/vi/2Vq1pN7qJkw/0.jpg)](https://www.youtube.com/watch?v=2Vq1pN7qJkw)
+
+### Features
+- Interact Prompt
+- Crouch
+- Environment Obstacles
+- Wandering AI
+- Equip Weapon
+- Aim Weapon
+- Lobby Networking
+
+## Necromancer's Tomb - Blueprint
 ![](https://i.ibb.co/mrjnqDzW/Screenshot-57.png)
 
 SOURCE: https://github.com/TechProgramming/NecromancersTomb
@@ -75,7 +95,7 @@ WEBSITE: https://clanlabs.co/
 - Patrolling AI
 - Stealth Hide in Corners
 - Floor Trap with Delay
-- Collecable
+- Collectible
 - Unlockable Door
 - Objective UI
 
@@ -274,7 +294,7 @@ function SCP:BreachWander()
 end
 ```
 
-# Demonstrations
+# Demonstrations (UE)
 
 ## Unreal Engine Networking
 [![](https://img.youtube.com/vi/2Vq1pN7qJkw/0.jpg)](https://www.youtube.com/watch?v=2Vq1pN7qJkw)
@@ -285,3 +305,8 @@ end
 ## Interaction System + Dialogue
 [![](https://img.youtube.com/vi/EgUR2pNJinc/0.jpg)](https://www.youtube.com/watch?v=EgUR2pNJinc)
 
+## Architecture Camera and Floor Change + Control Time
+[![](https://img.youtube.com/vi/VwO04t9ggW4/0.jpg)](https://www.youtube.com/watch?v=VwO04t9ggW4)
+
+## Pickup Object + Lean + Camera Bob + Camera Zoon + Sprint and Stamina + Breathing Change with Stamina + Hold Breath and Hear Heartbeat + Flashlight
+[![](https://img.youtube.com/vi/hLULw2bLDUQ/0.jpg)](https://www.youtube.com/watch?v=hLULw2bLDUQ)
