@@ -15,9 +15,9 @@
 
 # Experience
 Game Design and Production Instructor
-- Creating course projects to demonstrate the use of C++, Blueprint, AI, Weapons, and Narrative
+- Creating course projects for Unreal Engine 5.
 
-Looty Games - Avatar Air Bender Fighting Game
+Looty Games - Avatar Air Bender Fighting Game (Lua)
 - Missions System
 - Emote System
 - Tutorial
@@ -28,7 +28,7 @@ Looty Games - Avatar Air Bender Fighting Game
 [VIDEO](https://www.youtube.com/watch?v=PenfqJHtU6w) |
 [GAME](https://www.roblox.com/games/101874364639492/Avatar-Legends-Bending-Grounds-BETA)
 
-Twin Atlas - MTV, Teen Wolf, West Elm
+Twin Atlas - MTV, Teen Wolf, West Elm (Lua)
 - House Editor
 - Voting System
 - Obstacle Course
@@ -44,11 +44,11 @@ Twin Atlas - MTV, Teen Wolf, West Elm
 [MTV PROMO](https://www.youtube.com/watch?v=FYDpSNdZZhw)
 
 
-CUDO - CUDO World RPG (Unreleased)
+CUDO - CUDO World RPG (Unreleased) (Lua)
 - Chest Reward System
 - Shop System
 
-Fishing Simulator
+Fishing Simulator (Lua, JavaScript)
 - Live Operations Data Management Tools
 
 ### Video Demonstration
