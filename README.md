@@ -24,8 +24,7 @@ Looty Games - Avatar Air Bender Fighting Game
 - Sound System
 - Round System
 
-### Video
-[![](https://img.youtube.com/vi/PenfqJHtU6w/0.jpg)](https://www.youtube.com/watch?v=PenfqJHtU6w)
+VIDEO: https://www.youtube.com/watch?v=PenfqJHtU6w
 
 GAME: https://www.roblox.com/games/101874364639492/Avatar-Legends-Bending-Grounds-BETA
 
@@ -36,18 +35,16 @@ Twin Atlas - MTV, Teen Wolf, West Elm
 - Round System
 - Shop System
 
-### Video
-[![](https://img.youtube.com/vi/_JgCbbQr-3o/0.jpg)](https://www.youtube.com/watch?v=_JgCbbQr-3o)
+WEREWOLF ESCAPE PROMO: https://www.youtube.com/watch?v=_JgCbbQr-3o
 
 GAME: https://www.roblox.com/games/11864182128/NEW-MAP-Werewolf-Escape
 
-### Video
-[![](https://img.youtube.com/vi/QI2XYDuGuNw/0.jpg)](https://www.youtube.com/watch?v=QI2XYDuGuNw)
+WELD ELM PROMO: https://www.youtube.com/watch?v=QI2XYDuGuNw
 
-GAME: https://www.roblox.com/games/9680886326/NEW-MINIGAME-West-Elm-Home-Design
+WEST ELM GAME: https://www.roblox.com/games/9680886326/NEW-MINIGAME-West-Elm-Home-Design
 
-### Video
-[![](https://img.youtube.com/vi/FYDpSNdZZhw/0.jpg)](https://www.youtube.com/watch?v=FYDpSNdZZhw)
+[MTV PROMO](https://www.youtube.com/watch?v=FYDpSNdZZhw)
+
 
 CUDO - CUDO World RPG (Unreleased)
 - Chest Reward System
@@ -56,7 +53,7 @@ CUDO - CUDO World RPG (Unreleased)
 Fishing Simulator
 - Live Operations Data Management Tools
 
-### Video
+### Video Demonstration
 [![](https://img.youtube.com/vi/Zft_1YW6fkY/0.jpg)](https://www.youtube.com/watch?v=Zft_1YW6fkY)
 
 PLAY: https://www.roblox.com/games/2866967438/Fishing-Simulator
@@ -69,7 +66,7 @@ PLAY: https://www.roblox.com/games/2866967438/Fishing-Simulator
 ## Necromancers Tomb - Blueprint
 ![](https://i.ibb.co/mrjnqDzW/Screenshot-57.png)
 
-SOURCE: [SOON]
+SOURCE: https://github.com/TechProgramming/NecromancersTomb
 
 ### About
 - A project to test AI, Obstacles, Hiding Mechanic, and Unlocking Doors
