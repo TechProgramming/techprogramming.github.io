@@ -68,6 +68,146 @@ Fishing Simulator (Lua, JavaScript)
 ### About
 A project for testing networking and top-down gameplay.
 
+
+### Excerpt - Interaction Component
+SOURCE: https://github.com/TechProgramming/Fallen-Star-Horizon
+```cpp
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "FSHInteractComponent.h"
+
+#include "Components/SphereComponent.h"
+#include "FallenStarHorizon/Character/FSHCharacter.h"
+#include "FallenStarHorizon/UserInterface/HUD/FSHInteractOption.h"
+#include "FallenStarHorizon/Weapon/FSHWeapon.h"
+
+
+// Sets default values for this component's properties
+UFSHInteractComponent::UFSHInteractComponent()
+{
+	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
+	// off to improve performance if you don't need them.
+	PrimaryComponentTick.bCanEverTick = true;
+	
+}
+
+
+// Called when the game starts
+void UFSHInteractComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	AActor* Owner = this->GetOwner();
+	SetWidgetVisible(false, nullptr);
+	if (Owner && Owner->HasAuthority())
+	{
+		InteractionSphere->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+		InteractionSphere->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+		InteractionSphere->OnComponentBeginOverlap.AddDynamic(this, &UFSHInteractComponent::OnSphereBeginOverlap);
+		InteractionSphere->OnComponentEndOverlap.AddDynamic(this, &UFSHInteractComponent::OnSphereEndOverlap);
+		
+	}
+}
+
+void UFSHInteractComponent::SetWidgetVisible(bool bIsVisible, AActor* Instigator)
+{
+	AActor* Owner = this->GetOwner();
+	 if (Owner && InteractPromptWidget)
+	 {
+	 	InteractPromptWidget->SetVisibility(bIsVisible);
+	 	if (auto* Character = Cast<AFSHCharacter>(Instigator))
+	 	{
+	 		switch (InteractObjectType)
+	 		{
+	 		case EInteractObjectType::EIOT_Weapon:
+	 			{
+	 				auto* Weapon = Cast<AFSHWeapon>(GetOwner());
+	 				Character->PushReplicationOverlappingWeapon(Weapon);
+	 				return;
+	 			}
+	 		case EInteractObjectType::EIOT_Custom:
+	 			{
+	 				return;
+	 			}
+	 		}
+	 	}
+	 }
+}
+
+void UFSHInteractComponent::SetCanInteract(bool bNewIsActive)
+{
+	bActive = bNewIsActive;
+	//UFSHInteractComponent::SetWidgetVisible(bIsVisible, Instigator);
+}
+
+bool UFSHInteractComponent::GetCanInteract()
+{
+	return bActive;
+}
+
+void UFSHInteractComponent::Trigger(AActor* Instigator)
+{
+	OnTriggered.Broadcast(Instigator);
+	Triggered(Instigator);
+}
+
+void UFSHInteractComponent::Triggered_Implementation(AActor* Instigator)
+{
+	
+}
+
+
+void UFSHInteractComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlapComponent, AActor* OtherActor,
+                                                 UPrimitiveComponent* OtherComp, int32 OtherBoxIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AActor* Owner = this->GetOwner();
+	AFSHCharacter* FSHCharacter = Cast<AFSHCharacter>(OtherActor);
+	if (Owner && FSHCharacter)
+	{
+		if(UFSHInteractOption* InteractionOption = Cast<UFSHInteractOption>(InteractPromptWidget->GetUserWidgetObject()))
+		{
+			InteractionOption->ActionTextBlock->SetText(FText::FromString(DisplayText));
+			// Push
+			FSHCharacter->InteractableComponentsNearby.Emplace(this);
+		}
+	}
+}
+
+void UFSHInteractComponent::OnSphereEndOverlap(UPrimitiveComponent* OverlapComponent, AActor* OtherActor,
+											UPrimitiveComponent* OtherComp, int32 OtherBoxIndex)
+{
+	AActor* Owner = this->GetOwner();
+	AFSHCharacter* FSHCharacter = Cast<AFSHCharacter>(OtherActor);
+	if (Owner && FSHCharacter)
+	{
+		//if(GEngine) { 
+		//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, TEXT("END 1"));
+		//}
+		if(UFSHInteractOption* InteractionOption = Cast<UFSHInteractOption>(InteractPromptWidget->GetUserWidgetObject()))
+		{
+			//if(GEngine) { 
+			//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, TEXT("END 2"));
+			//}
+			const int32 ItemIndex = FSHCharacter->InteractableComponentsNearby.IndexOfByKey(this);
+			FSHCharacter->InteractableComponentsNearby.RemoveAt(ItemIndex);
+			SetWidgetVisible(false, nullptr);
+		}
+	}
+}
+
+// Called every frame
+void UFSHInteractComponent::TickComponent(float DeltaTime, ELevelTick TickType,
+                                          FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+ 
+}
+
+
+```
+
+
 ### Demonstration
 [![](https://img.youtube.com/vi/-AwoyUF-20A/0.jpg)](https://www.youtube.com/watch?v=-AwoyUF-20A)
 [![](https://img.youtube.com/vi/2Vq1pN7qJkw/0.jpg)](https://www.youtube.com/watch?v=2Vq1pN7qJkw)
