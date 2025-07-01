@@ -58,6 +58,7 @@ Fishing Simulator (Lua, JavaScript)
 
 # Projects
 - Fallen Star Horizon (Unreal Engine, C++)
+- Unreal VR Template Conversion to C++ (Unreal Engine, C++)
 - Necromancer's Tomb (Unreal Engine, Blueprint)
 - Clan Labs (Node.js, JavaScript, Web, API)
 - Area 24 (Roblox, Lua, Weapons, AI, RPG Systems)
@@ -220,6 +221,105 @@ void UFSHInteractComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 - Equip Weapon
 - Aim Weapon
 - Lobby Networking
+
+## Unreal VR Template C++ Conversion (WIP) - C++
+![](https://i.ibb.co/KpKh81D7/Screenshot-59.png)
+
+SOURCE: https://github.com/TechProgramming/VRProjectExample
+
+### Video
+[![](https://img.youtube.com/vi/26paAkoAD-E/0.jpg)](https://youtu.be/26paAkoAD-E)
+
+### Changes
+- Converted Grab Component to C++
+- Made a new Pistol that supports the C++ Grab Component
+- Added Locomotion and Smooth Turn
+- Added Pullable Lever
+
+### Excerpt - Lever
+Source: https://github.com/TechProgramming/VRProjectExample/blob/master/Source/VRProjectExample/VRPLever.cpp
+```cpp
+
+
+#include "VRPLever.h"
+#include <Kismet/KismetMathLibrary.h>
+
+// Sets default values
+AVRPLever::AVRPLever()
+{
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
+	Lever = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Lever"));
+	GrabComponent = CreateDefaultSubobject<UVRPGrabComponent>(TEXT("GrabComponent"));
+
+	RootComponent = Scene;
+	Lever->SetupAttachment(Scene);
+	GrabComponent->SetupAttachment(Lever);
+}
+
+// Called when the game starts or when spawned
+void AVRPLever::BeginPlay()
+{
+	Super::BeginPlay();
+
+	GrabComponent->OnGrabbedDelegate.AddDynamic(this, &ThisClass::OnGrabbed);
+	GrabComponent->OnDroppedDelegate.AddDynamic(this, &ThisClass::OnDropped);
+}
+
+// Called every frame
+void AVRPLever::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
+void AVRPLever::UpdateRotation()
+{
+    if (!MotionControllerRef || !bIsGrabbed) {
+        return;
+    }
+
+
+    FVector ControllerWorldPos = MotionControllerRef->GetComponentLocation();
+    FVector LeverPivotPos = Scene->GetComponentLocation();
+    FVector ControllerLocalPos = Scene->GetComponentTransform().InverseTransformPosition(ControllerWorldPos);
+    FVector MovementDelta = ControllerLocalPos - InitialGrabOffset;
+    float RotationDelta = -MovementDelta.X * RotationSensitivity;
+
+    float NewPitch = FMath::Clamp(
+        InitialLeverRotation.Pitch + RotationDelta,
+        -70.0f,
+        70.0f
+    );
+
+    FRotator NewRotation = FRotator(
+        NewPitch,
+        InitialLeverRotation.Yaw,
+        InitialLeverRotation.Roll
+    );
+
+    Lever->SetRelativeRotation(NewRotation);
+}
+
+void AVRPLever::OnGrabbed(UMotionControllerComponent* MotionController)
+{
+	MotionControllerRef = MotionController;
+	GetWorldTimerManager().SetTimer(UpdateRotationTimerHandle, this, &ThisClass::UpdateRotation, 0.01f, true);
+
+	bIsGrabbed = true;
+	InitialLeverRotation = Lever->GetRelativeRotation();
+	FVector ControllerWorldPos = MotionController->GetComponentLocation();
+	InitialGrabOffset = Scene->GetComponentTransform().InverseTransformPosition(ControllerWorldPos);
+}
+
+void AVRPLever::OnDropped()
+{
+	GetWorldTimerManager().ClearTimer(UpdateRotationTimerHandle);
+	MotionControllerRef = nullptr;
+	bIsGrabbed = false;
+}
+```
 
 ## Necromancer's Tomb - Blueprint
 ![](https://i.ibb.co/mrjnqDzW/Screenshot-57.png)
